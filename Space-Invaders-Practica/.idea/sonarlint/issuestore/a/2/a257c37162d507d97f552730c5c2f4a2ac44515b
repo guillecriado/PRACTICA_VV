@@ -1,0 +1,28 @@
+
+q
+java:S1066ı"/Merge this if statement with the enclosing one.(†Ï€ÿÿÿÿÿJ$b40b74f7-33a5-4b49-81bc-e0e911737a55
+l
+java:S1066ë"/Merge this if statement with the enclosing one.(ñÁë£J$05d4fb7c-8a6f-4102-8871-c7ad17baf5b6
+q
+java:S1066©"/Merge this if statement with the enclosing one.(˜²›©üÿÿÿÿJ$ff034d33-faf3-458d-903f-76ed53cf91ff
+l
+java:S1066«"/Merge this if statement with the enclosing one.(¨®×êJ$980f4a69-009a-40b9-9b6f-d41512004245
+p
+java:S1948"(Make "aliens" transient or serializable.(Ñ…Øûÿÿÿÿ8¥ç’ß¨2J$4795eb83-1ca7-4533-b4a2-570597ef4ea1
+p
+java:S1948"(Make "player" transient or serializable.(Ç¹Ù±úÿÿÿÿ8¦ç’ß¨2J$7dcdb9fa-2d74-427f-8aba-2af3674388cd
+n
+java:S1948"&Make "shot" transient or serializable.(¹‘Ã²üÿÿÿÿ8¦ç’ß¨2J$24519c6e-e31d-4b2b-9c87-4323fbbfad99
+	java:S100ñ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²×­ùÿÿÿÿJ$a5da5e28-3426-4d37-8bfd-4ccff442ecc7
+	java:S100š"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈÀÑşÿÿÿÿJ$6684e1b0-70ee-4bea-827a-1ceb12852630
+”
+java:S3776š"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ÈÀÑşÿÿÿÿJ$31f5aa01-f892-4078-b807-4958fa5bf6c2
+	java:S100Õ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü¸ıçùÿÿÿÿJ$fbd127ba-8d07-4bef-b458-4f31d7322bb2
+”
+java:S3776Õ"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ü¸ıçùÿÿÿÿJ$799e83bc-f7f5-4337-9a04-4d78021c9da7
+[
+java:S2119Ö"Save and re-use this "Random".(¯”J$bf5db753-a081-49f8-b368-c1de2f78fda5
+u
+java:S1117Ú"8Rename "shot" which hides the field declared at line 29.(ïöØJ$bbce478c-deb2-4aaf-9fb8-e733d1046670
+_
+java:S3398†""Move this method into "GameCycle".(´–Í–J$493a3877-660b-45ca-b69e-ee81cb4a0c94
