@@ -51,7 +51,7 @@ public class Alien extends Sprite {
     }
 
     /**
-     * Mueve horizontalmente el alien en la dirección indicada
+     * Mueve horizontalmente el alien en la dirección indicada.
      * @param direction posición hacia la izquierda o derecha hacia la que se mueve el alien
      * */
     public void act(int direction) {
@@ -87,7 +87,7 @@ public class Alien extends Sprite {
          * Inicializa el nuevo objeto bomba y le asigna las coordenadas indicadas y la imagen correspondiente en la interfaz
          * @param x coordenada X de la posición de la nueva bomba
          * @param y coordenada Y de la posición de la nueva bomba
-         * Si el valor X o Y indiados superan el margen de la pantalla, se les asignará el valor máximo permitido.
+         * Si el valor X o Y indicados superan el margen de la pantalla, se les asignará el valor máximo permitido.
          * Si se introduce algún valor negativo, será reemplazado por 0.
          * */
         private void initBomb(int x, int y) {
