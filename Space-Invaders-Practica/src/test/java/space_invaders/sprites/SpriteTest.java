@@ -1,12 +1,13 @@
 package space_invaders.sprites;
 
 import org.junit.jupiter.api.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class SpriteTest {
 
 
-    Sprite sprite ;
+    Sprite sprite;
 
     @BeforeEach
     void setUp() {
@@ -30,5 +31,18 @@ class SpriteTest {
         sprite.setVisible(false);
         assertFalse(sprite.isVisible());
     }
+
+    @Test
+    void isDyingReturnTrue() {
+        sprite.setDying(true);
+        assertTrue(sprite.isDying());
+    }
+
+    @Test
+    void isDyingReturnFalse() {
+        sprite.setDying(false);
+        assertFalse(sprite.isDying());
+    }
+
 
 }
