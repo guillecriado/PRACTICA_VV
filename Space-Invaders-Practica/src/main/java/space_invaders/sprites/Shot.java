@@ -22,7 +22,7 @@ public class Shot extends Sprite {
      * @param x coordenada X de la posición del nuevo disparo
      * @param y coordenada Y de la posición del nuevo disparo
      * */
-    private void initShot(int x, int y) {
+    public void initShot(int x, int y) {
 
         var shotImg = "src/main/resources/images/shot.png";
         var ii = new ImageIcon(shotImg);
