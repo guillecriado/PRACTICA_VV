@@ -206,7 +206,7 @@ class BoardTest {
 
     @Test
     void testUpdateAliensR5()  {
-        board.getAliens().getFirst().setY(Commons.GROUND + Commons.ALIEN_HEIGHT * 2);//Llega a borde inferior
+        board.getAliens().getFirst().setY(Commons.GROUND + Commons.ALIEN_HEIGHT );//Llega a borde inferior
         board.update_aliens();
         assertFalse(board.isInGame()); //Termina Juego
         assertEquals("Invasion!", board.getMessage()); //Mensaje Invasión
@@ -221,6 +221,7 @@ class BoardTest {
     //            setDestroyed(true);
     @Test
     void testUpdateBombR1()  {
+        board.getAliens().getFirst().getBomb().setDestroyed(true); //Ha sido destruido/no ha sido creado -> SI
         board.update_bomb();
         assertFalse(board.getAliens().getFirst().getBomb().isDestroyed()); //Cambiar estado de Bombas (destroyed)
         assertNotNull(board.getAliens().getFirst().getBomb()); //Crear bomba
@@ -266,8 +267,8 @@ class BoardTest {
         bomb.setX(110);
         bomb.setY(210);
         board.update_bomb();
-        assertTrue(board.getAliens().getFirst().getBomb().isDestroyed()); //Cambiar estado de Bombas (destroyed)
         assertTrue(player.isDying()); //Estado de jugador (setDying)
+        assertTrue(board.getAliens().getFirst().getBomb().isDestroyed()); //Cambiar estado de Bombas (destroyed)
         assertNotNull(board.getAliens().getFirst().getBomb().getImage()); //: Cambia imagen por la animación de explosición
     }
 
