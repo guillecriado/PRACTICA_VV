@@ -52,33 +52,33 @@ public class AlienTest {
         }
         @Test
         void alienCP5(){
-            alien = new Alien(4, 357);
+            alien = new Alien(4, 349);
             int posicionXEsperada = 5;
-            int posicionYEsperada = 357;
+            int posicionYEsperada = 349;
 
             assertAll("Caso de Prueba CP5: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 5"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 357"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 349"));
         }
         @Test
         void alienCP6(){
-            alien = new Alien(4, 358);
+            alien = new Alien(4, 350);
             int posicionXEsperada = 5;
-            int posicionYEsperada = 358;
+            int posicionYEsperada = 350;
 
             assertAll("Caso de Prueba CP6: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 5"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienCP7(){
-            alien = new Alien(4, 359);
+            alien = new Alien(4, 351);
             int posicionXEsperada = 5;
-            int posicionYEsperada = 358;
+            int posicionYEsperada = 350;
 
             assertAll("Caso de Prueba CP7: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 5"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienCP8(){
@@ -122,33 +122,33 @@ public class AlienTest {
         }
         @Test
         void alienCP12(){
-            alien = new Alien(5, 357);
+            alien = new Alien(5, 349);
             int posicionXEsperada = 5;
-            int posicionYEsperada = 357;
+            int posicionYEsperada = 349;
 
             assertAll("Caso de Prueba CP12: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 5"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 357"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 349"));
         }
         @Test
         void alienCP13(){
-            alien = new Alien(5, 358);
+            alien = new Alien(5, 350);
             int posicionXEsperada = 5;
-            int posicionYEsperada = 358;
+            int posicionYEsperada = 350;
 
             assertAll("Caso de Prueba CP13: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 5"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienCP14(){
-            alien = new Alien(5, 359);
+            alien = new Alien(5, 351);
             int posicionXEsperada = 5;
-            int posicionYEsperada = 358;
+            int posicionYEsperada = 350;
 
             assertAll("Caso de Prueba CP14: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 5"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienCP15(){
@@ -192,33 +192,33 @@ public class AlienTest {
         }
         @Test
         void alienCP19(){
-            alien = new Alien(6, 357);
+            alien = new Alien(6, 349);
             int posicionXEsperada = 6;
-            int posicionYEsperada = 357;
+            int posicionYEsperada = 349;
 
             assertAll("Caso de Prueba CP19: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 6"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 357"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 349"));
         }
         @Test
         void alienCP20(){
-            alien = new Alien(6, 358);
+            alien = new Alien(6, 350);
             int posicionXEsperada = 6;
-            int posicionYEsperada = 358;
+            int posicionYEsperada = 350;
 
             assertAll("Caso de Prueba CP20: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 6"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienCP21(){
-            alien = new Alien(6, 359);
+            alien = new Alien(6, 351);
             int posicionXEsperada = 6;
-            int posicionYEsperada = 358;
+            int posicionYEsperada = 350;
 
             assertAll("Caso de Prueba CP21: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 6"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienCP22(){
@@ -262,33 +262,33 @@ public class AlienTest {
         }
         @Test
         void alienCP26(){
-            alien = new Alien(164, 357);
+            alien = new Alien(164, 349);
             int posicionXEsperada = 164;
-            int posicionYEsperada = 357;
+            int posicionYEsperada = 349;
 
             assertAll("Caso de Prueba CP26: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 164"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 357"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 349"));
         }
         @Test
         void alienCP27(){
-            alien = new Alien(164, 358);
+            alien = new Alien(164, 350);
             int posicionXEsperada = 164;
-            int posicionYEsperada = 358;
+            int posicionYEsperada = 350;
 
             assertAll("Caso de Prueba CP27: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 164"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienCP28(){
-            alien = new Alien(164, 359);
+            alien = new Alien(164, 351);
             int posicionXEsperada = 164;
-            int posicionYEsperada = 358;
+            int posicionYEsperada = 350;
 
             assertAll("Caso de Prueba CP288: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 164"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienCP29(){
@@ -332,33 +332,33 @@ public class AlienTest {
         }
         @Test
         void alienCP33(){
-            alien = new Alien(327, 357);
+            alien = new Alien(327, 349);
             int posicionXEsperada = 327;
-            int posicionYEsperada = 357;
+            int posicionYEsperada = 349;
 
             assertAll("Caso de Prueba CP33: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 327"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 357"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 349"));
         }
         @Test
         void alienCP34(){
-            alien = new Alien(327, 358);
+            alien = new Alien(327, 350);
             int posicionXEsperada = 327;
-            int posicionYEsperada = 358;
+            int posicionYEsperada = 350;
 
             assertAll("Caso de Prueba CP34: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 327"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienCP35(){
-            alien = new Alien(327, 359);
+            alien = new Alien(327, 351);
             int posicionXEsperada = 327;
-            int posicionYEsperada = 358;
+            int posicionYEsperada = 350;
 
             assertAll("Caso de Prueba CP35: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 327"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienCP36(){
@@ -402,33 +402,33 @@ public class AlienTest {
         }
         @Test
         void alienCP40(){
-            alien = new Alien(328, 357);
+            alien = new Alien(328, 349);
             int posicionXEsperada = 328;
-            int posicionYEsperada = 357;
+            int posicionYEsperada = 349;
 
             assertAll("Caso de Prueba CP40: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 328"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 357"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 349"));
         }
         @Test
         void alienCP41(){
-            alien = new Alien(328, 358);
+            alien = new Alien(328, 350);
             int posicionXEsperada = 328;
-            int posicionYEsperada = 358;
+            int posicionYEsperada = 350;
 
             assertAll("Caso de Prueba CP41: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 328"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienCP42(){
-            alien = new Alien(328, 359);
+            alien = new Alien(328, 351);
             int posicionXEsperada = 328;
-            int posicionYEsperada = 358;
+            int posicionYEsperada = 350;
 
             assertAll("Caso de Prueba CP42: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 328"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienCP43(){
@@ -472,33 +472,33 @@ public class AlienTest {
         }
         @Test
         void alienCP47(){
-            alien = new Alien(329, 357);
+            alien = new Alien(329, 349);
             int posicionXEsperada = 328;
-            int posicionYEsperada = 357;
+            int posicionYEsperada = 349;
 
             assertAll("Caso de Prueba CP47: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 328"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 357"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 349"));
         }
         @Test
         void alienCP48(){
-            alien = new Alien(329, 358);
+            alien = new Alien(329, 350);
             int posicionXEsperada = 328;
-            int posicionYEsperada = 358;
+            int posicionYEsperada = 350;
 
             assertAll("Caso de Prueba CP48: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 328"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienCP49(){
-            alien = new Alien(329, 359);
+            alien = new Alien(329, 351);
             int posicionXEsperada = 328;
-            int posicionYEsperada = 358;
+            int posicionYEsperada = 350;
 
             assertAll("Caso de Prueba CP49: Posición de creación del alien",
                     () -> assertEquals(posicionXEsperada, alien.getX(), "La coordenada X debería ser 328"),
-                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionYEsperada, alien.getY(), "La coordenada Y debería ser 350"));
         }
     }
 
@@ -603,36 +603,36 @@ public class AlienTest {
         }
         @Test
         void alienBombCP5(){
-            alien = new Alien(4, 357);
+            alien = new Alien(4, 349);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 5;
-            int posicionBombYEsperada = 357;
+            int posicionBombYEsperada = 349;
 
             assertAll("Caso de Prueba CP5: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 5"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 357"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 349"));
         }
         @Test
         void alienBombCP6(){
-            alien = new Alien(4, 358);
+            alien = new Alien(4, 350);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 5;
-            int posicionBombYEsperada = 358;
+            int posicionBombYEsperada = 350;
 
             assertAll("Caso de Prueba CP6: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 5"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienBombCP7(){
-            alien = new Alien(4, 359);
+            alien = new Alien(4, 351);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 5;
-            int posicionBombYEsperada = 359;
+            int posicionBombYEsperada = 351;
 
             assertAll("Caso de Prueba CP7: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 5"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 359"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 351"));
         }
         @Test
         void alienBombCP8(){
@@ -680,36 +680,36 @@ public class AlienTest {
         }
         @Test
         void alienBombCP12(){
-            alien = new Alien(5, 357);
+            alien = new Alien(5, 349);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 5;
-            int posicionBombYEsperada = 357;
+            int posicionBombYEsperada = 349;
 
             assertAll("Caso de Prueba CP11: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 5"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 357"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 349"));
         }
         @Test
         void alienBombCP13(){
-            alien = new Alien(5, 358);
+            alien = new Alien(5, 350);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 5;
-            int posicionBombYEsperada = 358;
+            int posicionBombYEsperada = 350;
 
             assertAll("Caso de Prueba CP13: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 5"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienBombCP14(){
-            alien = new Alien(5, 359);
+            alien = new Alien(5, 351);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 5;
-            int posicionBombYEsperada = 359;
+            int posicionBombYEsperada = 351;
 
             assertAll("Caso de Prueba CP14: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 5"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 359"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 351"));
         }
         @Test
         void alienBombCP15(){
@@ -757,36 +757,36 @@ public class AlienTest {
         }
         @Test
         void alienBombCP19(){
-            alien = new Alien(6, 357);
+            alien = new Alien(6, 349);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 6;
-            int posicionBombYEsperada = 357;
+            int posicionBombYEsperada = 349;
 
             assertAll("Caso de Prueba CP19: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 6"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 357"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 349"));
         }
         @Test
         void alienBombCP20(){
-            alien = new Alien(6, 358);
+            alien = new Alien(6, 350);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 6;
-            int posicionBombYEsperada = 358;
+            int posicionBombYEsperada = 350;
 
             assertAll("Caso de Prueba CP20: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 6"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienBombCP21(){
-            alien = new Alien(6, 359);
+            alien = new Alien(6, 351);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 6;
-            int posicionBombYEsperada = 358;
+            int posicionBombYEsperada = 350;
 
             assertAll("Caso de Prueba CP21: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 6"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienBombCP22(){
@@ -834,36 +834,36 @@ public class AlienTest {
         }
         @Test
         void alienBombCP26(){
-            alien = new Alien(164, 357);
+            alien = new Alien(164, 349);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 164;
-            int posicionBombYEsperada = 357;
+            int posicionBombYEsperada = 349;
 
             assertAll("Caso de Prueba CP26: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 164"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 357"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 349"));
         }
         @Test
         void alienBombCP27(){
-            alien = new Alien(164, 358);
+            alien = new Alien(164, 350);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 164;
-            int posicionBombYEsperada = 358;
+            int posicionBombYEsperada = 350;
 
             assertAll("Caso de Prueba CP27: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 164"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienBombCP28(){
-            alien = new Alien(164, 359);
+            alien = new Alien(164, 351);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 164;
-            int posicionBombYEsperada = 358;
+            int posicionBombYEsperada = 350;
 
             assertAll("Caso de Prueba CP28: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 164"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienBombCP29(){
@@ -911,36 +911,36 @@ public class AlienTest {
         }
         @Test
         void alienBombCP33(){
-            alien = new Alien(327, 357);
+            alien = new Alien(327, 349);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 327;
-            int posicionBombYEsperada = 357;
+            int posicionBombYEsperada = 349;
 
             assertAll("Caso de Prueba CP33: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 327"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 357"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 349"));
         }
         @Test
         void alienBombCP34(){
-            alien = new Alien(327, 358);
+            alien = new Alien(327, 350);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 327;
-            int posicionBombYEsperada = 358;
+            int posicionBombYEsperada = 350;
 
             assertAll("Caso de Prueba CP34: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 327"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienBombCP35(){
-            alien = new Alien(327, 359);
+            alien = new Alien(327, 351);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 327;
-            int posicionBombYEsperada = 358;
+            int posicionBombYEsperada = 350;
 
             assertAll("Caso de Prueba CP35: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 327"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienBombCP36(){
@@ -988,36 +988,36 @@ public class AlienTest {
         }
         @Test
         void alienBombCP40(){
-            alien = new Alien(328, 357);
+            alien = new Alien(328, 349);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 328;
-            int posicionBombYEsperada = 357;
+            int posicionBombYEsperada = 349;
 
             assertAll("Caso de Prueba CP40: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 328"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 357"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 349"));
         }
         @Test
         void alienBombCP41(){
-            alien = new Alien(328, 358);
+            alien = new Alien(328, 350);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 328;
-            int posicionBombYEsperada = 358;
+            int posicionBombYEsperada = 350;
 
             assertAll("Caso de Prueba CP41: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 328"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienBombCP42(){
-            alien = new Alien(328, 359);
+            alien = new Alien(328, 351);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 328;
-            int posicionBombYEsperada = 358;
+            int posicionBombYEsperada = 350;
 
             assertAll("Caso de Prueba CP42: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 328"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienBombCP43(){
@@ -1065,36 +1065,36 @@ public class AlienTest {
         }
         @Test
         void alienBombCP47(){
-            alien = new Alien(329, 357);
+            alien = new Alien(329, 349);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 328;
-            int posicionBombYEsperada = 357;
+            int posicionBombYEsperada = 349;
 
             assertAll("Caso de Prueba CP47: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 328"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 357"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 349"));
         }
         @Test
         void alienBombCP48(){
-            alien = new Alien(329, 358);
+            alien = new Alien(329, 350);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 328;
-            int posicionBombYEsperada = 358;
+            int posicionBombYEsperada = 350;
 
             assertAll("Caso de Prueba CP48: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 328"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 350"));
         }
         @Test
         void alienBombCP49(){
-            alien = new Alien(329, 359);
+            alien = new Alien(329, 351);
             bomb = alien.getBomb();
             int posicionBombXEsperada = 328;
-            int posicionBombYEsperada = 358;
+            int posicionBombYEsperada = 350;
 
             assertAll("Caso de Prueba CP49: Posición de creación de Bomb",
                     () -> assertEquals(posicionBombXEsperada, bomb.getX(), "La coordenada X debería ser 328"),
-                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 358"));
+                    () -> assertEquals(posicionBombYEsperada, bomb.getY(), "La coordenada Y debería ser 350"));
         }
     }
     @Nested
