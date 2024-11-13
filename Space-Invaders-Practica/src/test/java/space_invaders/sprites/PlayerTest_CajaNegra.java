@@ -5,11 +5,9 @@ import org.junit.jupiter.api.Test;
 import java.awt.event.KeyEvent;
 
 
-
-import static java.awt.event.KeyEvent.VK_LEFT;
 import static org.junit.jupiter.api.Assertions.*;
 
-class PlayerTest {
+class PlayerTest_CajaNegra {
 
     Player player;
     /**

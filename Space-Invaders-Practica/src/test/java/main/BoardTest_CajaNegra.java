@@ -6,14 +6,11 @@ import space_invaders.sprites.Alien;
 import space_invaders.sprites.Player;
 import space_invaders.sprites.Shot;
 
-import javax.swing.*;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BoardTest {
+class BoardTest_CajaNegra {
     private Board board;
 
     @BeforeEach

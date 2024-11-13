@@ -4,7 +4,7 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SpriteTest {
+class SpriteTest_CajaNegra {
 
 
     Sprite sprite;

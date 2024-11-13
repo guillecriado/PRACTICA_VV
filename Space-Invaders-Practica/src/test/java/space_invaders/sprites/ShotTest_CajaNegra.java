@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ShotTest {
+class ShotTest_CajaNegra {
 
     Shot shot;
     int limiteInferiorXFuera,limiteInferiorX,limiteInferiorXDentro, valorXNominal, limiteSuperiorXDentro, limiteSuperiorX, limiteSuperiorXFuera;

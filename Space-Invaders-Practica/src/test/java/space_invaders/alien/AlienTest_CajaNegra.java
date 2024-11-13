@@ -5,7 +5,7 @@ import space_invaders.sprites.Alien;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class AlienTest {
+public class AlienTest_CajaNegra {
     Alien alien;
     Alien.Bomb bomb;
     @Nested
