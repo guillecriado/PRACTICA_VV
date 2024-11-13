@@ -25,50 +25,50 @@ class BoardTest {
     @Test
     void testgameInitR1() {
         board.getAliens().clear();// Incorrecto (No Aliens 24)
-        assert (board.getAliens().size() != Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Iniciar Aliens con 24 ->NO
+        assertNotEquals(Commons.NUMBER_OF_ALIENS_TO_DESTROY, board.getAliens().size()); //Iniciar Aliens con 24 ->NO
     }
 
     @Test
     void testgameInitR2() {
         board.getAliens().get(0).setX(3); //Posición X Inicial y Desplazamiento pone a X < 5
-        assert (board.getAliens().size() == Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Iniciar Aliens con 24 ->SI
+        assertEquals(Commons.NUMBER_OF_ALIENS_TO_DESTROY, board.getAliens().size()); //Iniciar Aliens con 24 ->SI
         assertFalse(board.getAliens().get(0).getX() >= (Commons.BORDER_LEFT)); //Iniciar Alienígen dentro de Board -> NO
     }
 
     @Test
     void testgameInitR3() {
         board.getAliens().get(0).setX(330); //Posición X Inicial y Desplazamiento X > 328
-        assert (board.getAliens().size() == Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Iniciar Aliens con 24 ->SI
+        assertEquals(Commons.NUMBER_OF_ALIENS_TO_DESTROY, board.getAliens().size()); //Iniciar Aliens con 24 ->SI
         assertFalse(board.getAliens().get(0).getX() <= (Commons.BOARD_WIDTH - Commons.BORDER_RIGHT - Commons.ALIEN_WIDTH)); //Iniciar Alienígen dentro de Board -> NO
     }
 
 
     @Test
     void testGameInitR4() {
-        board.getAliens().get(0).setY(-1); //Posición X Inicial y Desplazamiento y < 0
+        board.getAliens().getFirst().setY(-1); //Posición X Inicial y Desplazamiento y < 0
         assert (board.getAliens().size() == Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Iniciar Aliens con 24 ->SI
-        assertFalse(board.getAliens().get(0).getY() >= (0)); //Iniciar Alienígen dentro de Board -> NO
+        assertFalse(board.getAliens().getFirst().getY() >= (0)); //Iniciar Alienígen dentro de Board -> NO
     }
 
     @Test
     void testGameInitR5() {
-        board.getAliens().get(0).setY(400); //Posición X Inicial y Desplazamiento y > 350
+        board.getAliens().getFirst().setY(400); //Posición X Inicial y Desplazamiento y > 350
         assert (board.getAliens().size() == Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Iniciar Aliens con 24 ->SI
-        assertFalse(board.getAliens().get(0).getY() <= (Commons.BOARD_HEIGHT)); //Iniciar Alienígen dentro de Board -> NO
+        assertFalse(board.getAliens().getFirst().getY() <= (Commons.BOARD_HEIGHT)); //Iniciar Alienígen dentro de Board -> NO
     }
 
     @Test
     void testGameInitR6() {
         assert (board.getAliens().size() == Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Iniciar Aliens con 24 ->SI
-        board.getAliens().get(0).setX(0); //El primer Alien Inicia en posición ALIEN_INIT_Y (5)
-        assertFalse(board.getAliens().get(0).getX() == (Commons.ALIEN_INIT_X)); //Colocar Alienígenas en Formación de Cuadrícula  -> NO
+        board.getAliens().getFirst().setX(0); //El primer Alien Inicia en posición ALIEN_INIT_Y (5)
+        assertNotEquals((Commons.ALIEN_INIT_X), board.getAliens().getFirst().getX()); //Colocar Alienígenas en Formación de Cuadrícula  -> NO
     }
 
     @Test
     void testGameInitR7() {
         assert (board.getAliens().size() == Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Iniciar Aliens con 24 ->SI
-        board.getAliens().get(0).setY(0); //El primer Alien Inicia en posición ALIEN_INIT_Y (350)
-        assertFalse(board.getAliens().get(0).getY() == (Commons.ALIEN_INIT_Y)); //Colocar Alienígenas en Formación de Cuadrícula -> NO
+        board.getAliens().getFirst().setY(0); //El primer Alien Inicia en posición ALIEN_INIT_Y (350)
+        assertNotEquals((Commons.ALIEN_INIT_Y), board.getAliens().getFirst().getY()); //Colocar Alienígenas en Formación de Cuadrícula -> NO
     }
 
 
@@ -77,8 +77,8 @@ class BoardTest {
     void testGameInitR8() {
         assert (board.getAliens().size() == Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Iniciar Aliens con 24 ->SI
         checkAlienPosition(board.getAliens());
-        assert (board.getPlayer() != null); // Inicializar Player -> SI
-        assert (board.getShot() != null); // Inicializar Shot -> SI
+        assertNotNull(board.getPlayer()); // Inicializar Player -> SI
+        assertNotNull(board.getShot()); // Inicializar Shot -> SI
     }
 
     //Iniciar Alienígen dentro de Board
@@ -132,18 +132,18 @@ class BoardTest {
 
     //Es normal que falle , ya que en el codigo numero de contador coge el valor Commons.CHANCE
     @Test
-    void testUpdateR1() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testUpdateR1()  {
         board.setDeaths(Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Número de contador de muertes
-        reflectMethod("update");
+        board.update();
         assertFalse(board.isInGame()); // Si el jugador ha perdido todas las vidas, el juego termina
     }
 
 
     @Test
-    void testUpdateR2() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testUpdateR2()  {
         board.setDeaths(0); //Número de contador de muertes
         int positionXBeforeUpdate = board.getAliens().get(0).getX();
-        reflectMethod("update");
+        board.update();
         int positionXAfterUpdate = board.getAliens().get(0).getX();
         assertNotEquals(positionXBeforeUpdate, positionXAfterUpdate); // Mover
         assertFalse(board.isInGame()); // Si el jugador ha perdido todas las vidas, el juego termina
@@ -154,11 +154,11 @@ class BoardTest {
     // Es normal que falle , para comprobar borde de derecha el codigo esta haciendo
     // if (x <= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT && direction != -1)
     @Test
-    void testUpdateAliensR1() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testUpdateAliensR1()  {
         int positionYBeforeUpdate = board.getAliens().getFirst().getY();
         board.getAliens().getFirst().setX(Commons.BOARD_WIDTH - Commons.BORDER_RIGHT);//Llega a borde derecho
         board.setDirection(1); //Mueve el alienígena hacia la derecha
-        reflectMethod("update_aliens");
+        board.update_aliens();
         int positionYAfterUpdate = board.getAliens().getFirst().getY();
         int diff = (positionYAfterUpdate - positionYBeforeUpdate);
         assertEquals(Commons.GO_DOWN, diff); // Cambiar dirección y mover hacia abajo
@@ -168,25 +168,23 @@ class BoardTest {
     //Es normal que falle , ya que en el codigo cuando llega borde izquierdo hace  a.setX(a.getY() + Commons.GO_DOWN);
     // no cambia posicion en Y
     @Test
-    void testUpdateAliensR2() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testUpdateAliensR2()  {
         int positionYBeforeUpdate = board.getAliens().getFirst().getY();
         board.getAliens().getFirst().setX(Commons.BORDER_LEFT);//Llega a borde izquierdo
         board.setDirection(-1); //Mueve el alienígena hacia la izquierda
-        reflectMethod("update_aliens");
+        board.update_aliens();
         int positionYAfterUpdate = board.getAliens().getFirst().getY();
         int diff = (positionYAfterUpdate - positionYBeforeUpdate) / Commons.NUMBER_OF_ALIENS_TO_DESTROY;
-        System.out.println(positionYAfterUpdate);
-        System.out.println(positionYBeforeUpdate);
         assertEquals(Commons.GO_DOWN, diff); // Cambiar dirección y mover hacia abajo
     }
 
     //Es normal que falle ,  para comprobar borde de derecha el codigo esta haciendo
     //    // if (x <= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT && direction != -1)
     @Test
-    void testUpdateAliensR3() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testUpdateAliensR3()  {
         int positionXBeforeUpdate = board.getAliens().get(2).getX();
         board.setDirection(2); //Mueve el alienígena hacia la izquierda
-        reflectMethod("update_aliens");
+        board.update_aliens();
         int positionXAfterUpdate = board.getAliens().get(2).getX();
         int expectedPositionMoved = -1 + Commons.ALIEN_WIDTH;
         int diff = (positionXAfterUpdate - positionXBeforeUpdate);
@@ -195,10 +193,10 @@ class BoardTest {
 
     //Es normal que falle ,  para comprobar borde de derecha el codigo esta haciendo
     @Test
-    void testUpdateAliensR4() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testUpdateAliensR4()  {
         int positionXBeforeUpdate = board.getAliens().get(2).getX();
         board.setDirection(1); //Mueve el alienígena hacia la derecha
-        reflectMethod("update_aliens");
+        board.update_aliens();
         int positionXAfterUpdate = board.getAliens().get(2).getX();
         int expectedPositionMoved = 1 + Commons.ALIEN_WIDTH;
         int diff = (positionXAfterUpdate - positionXBeforeUpdate);
@@ -207,9 +205,9 @@ class BoardTest {
 
 
     @Test
-    void testUpdateAliensR5() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        board.getAliens().getFirst().setY(Commons.GROUND + Commons.ALIEN_HEIGHT * 2);//Llega a borde inferior
-        reflectMethod("update_aliens");
+    void testUpdateAliensR5()  {
+        board.getAliens().getFirst().setY(Commons.GROUND + Commons.ALIEN_HEIGHT );//Llega a borde inferior
+        board.update_aliens();
         assertFalse(board.isInGame()); //Termina Juego
         assertEquals("Invasion!", board.getMessage()); //Mensaje Invasión
     }
@@ -222,17 +220,18 @@ class BoardTest {
     // private void initBomb(int x, int y) {
     //            setDestroyed(true);
     @Test
-    void testUpdateBombR1() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        reflectMethod("update_bomb");
+    void testUpdateBombR1()  {
+        board.getAliens().getFirst().getBomb().setDestroyed(true); //Ha sido destruido/no ha sido creado -> SI
+        board.update_bomb();
         assertFalse(board.getAliens().getFirst().getBomb().isDestroyed()); //Cambiar estado de Bombas (destroyed)
         assertNotNull(board.getAliens().getFirst().getBomb()); //Crear bomba
     }
 
     @Test
-    void testUpdateBombR2() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testUpdateBombR2()  {
         board.getAliens().getFirst().getBomb().setDestroyed(false); //Ha sido destruido/no ha sido creado -> NO
         int positionYBeforeUpdate = board.getAliens().getFirst().getBomb().getY();
-        reflectMethod("update_bomb");
+        board.update_bomb();
         int positionYAfterUpdate = board.getAliens().getFirst().getBomb().getY();
         assertNotEquals(positionYBeforeUpdate, positionYAfterUpdate); //Bajará verticalmente
     }
@@ -243,10 +242,10 @@ class BoardTest {
     //                    bomb.setDestroyed(false);
     //                }
     @Test
-    void testUpdateBombR3() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testUpdateBombR3()  {
         board.getAliens().getFirst().getBomb().setDestroyed(false); //Ha sido destruido/no ha sido creado -> NO
         board.getAliens().getFirst().getBomb().setY(Commons.GROUND - Commons.BOMB_HEIGHT); //Bomba ha llegado al suelo
-        reflectMethod("update_bomb");
+        board.update_bomb();
         assertTrue(board.getAliens().getFirst().getBomb().isDestroyed()); //Cambiar estado de Bombas (destroyed)
         assertNotNull(board.getAliens().getFirst().getBomb()); //Crear bomba
     }
@@ -257,7 +256,7 @@ class BoardTest {
     //                    this.player.setImage(ii.getImage());
     //                    this.player.setDying(false);
     @Test
-    void testUpdateBombR4() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testUpdateBombR4()  {
         board.getAliens().getFirst().getBomb().setDestroyed(false); //Ha sido destruido/no ha sido creado -> NO
         //Simultar Si jugador alcanza bomba
         Player player = board.getPlayer();
@@ -267,16 +266,16 @@ class BoardTest {
         bomb.setDestroyed(false);
         bomb.setX(110);
         bomb.setY(210);
-        reflectMethod("update_bomb");
-        assertTrue(board.getAliens().getFirst().getBomb().isDestroyed()); //Cambiar estado de Bombas (destroyed)
+        board.update_bomb();
         assertTrue(player.isDying()); //Estado de jugador (setDying)
+        assertTrue(board.getAliens().getFirst().getBomb().isDestroyed()); //Cambiar estado de Bombas (destroyed)
         assertNotNull(board.getAliens().getFirst().getBomb().getImage()); //: Cambia imagen por la animación de explosición
     }
 
     //---------------------------------------------Prueba 6 update_shots() -----------------------------------------------------------------
 
     @Test
-    void testUpdateShotsR1() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testUpdateShotsR1()  {
         int samePositionY=100;
 
         Shot shot = board.getShot();
@@ -288,14 +287,14 @@ class BoardTest {
         board.getAliens().getFirst().setY(samePositionY); //Posición Y disparo -> Es igual a la posición Y del Alien
         shot.setY(samePositionY); // //Posición Y disparo -> Es igual a la posición Y del Alien
 
-        reflectMethod("update_shots");
+        board.update_shots();
         int positionYAfterUpdate = board.getShot().getY();
         assertFalse(board.getAliens().getFirst().isDying());  //Alien Dying -> FALSE
         assertNotEquals(positionYAfterUpdate, positionYBeforeUpdate); // Desplazamiento del disparo hacia arriba
     }
 
     @Test
-    void testUpdateShotsR2() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testUpdateShotsR2()  {
         int samePositionX=100;
 
         Shot shot = board.getShot();
@@ -307,7 +306,7 @@ class BoardTest {
         board.getAliens().getFirst().setY(100); //Posición Y disparo -> NO Es igual a la posición Y del Alien
         shot.setY(200); // //Posición Y disparo -> NO Es igual a la posición Y del Alien
 
-        reflectMethod("update_shots");
+        board.update_shots();
         int positionYAfterUpdate = board.getShot().getY();
         assertFalse(board.getAliens().getFirst().isDying());  //Alien Dying -> FALSE
         assertNotEquals(positionYAfterUpdate, positionYBeforeUpdate); // Desplazamiento del disparo hacia arriba
@@ -318,13 +317,13 @@ class BoardTest {
     // en codigo hace     deaths--;
 
     @Test
-    void testUpdateShotsR3() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void testUpdateShotsR3()  {
         int samePositionX=100;
         int samePositionY=100;
 
         int numberDeathsBeforeShot = board.getDeaths();
         Shot shot = board.getShot();
-        int positionYBeforeUpdate = shot.getY();
+
 
         shot.setX(samePositionX); // : Posicion X disparo -> Es igual a la posición X del Alien
         board.getAliens().getFirst().setX(samePositionX); //Posición X Alien -> Es igual a la posición X del disparo
@@ -332,20 +331,15 @@ class BoardTest {
         board.getAliens().getFirst().setY(samePositionY); //Posición Y disparo -> Es igual a la posición Y del Alien
         shot.setY(samePositionY); // //Posición Y disparo -> Es igual a la posición Y del Alien
 
-        reflectMethod("update_shots");
+        board.update_shots();
 
         int numberDeathsAfterShot = board.getDeaths();
-        int positionYAfterUpdate = board.getShot().getY();
+
         assertTrue(board.getAliens().getFirst().isDying());  //Alien Dying -> TRUE
         assertEquals(numberDeathsBeforeShot+1,numberDeathsAfterShot); // Contador de muertes suma 1
     }
 
 
-    //reflexión
-    private void reflectMethod(String methodName) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Method privateMethod = Board.class.getDeclaredMethod(methodName);
-        privateMethod.setAccessible(true);
-        privateMethod.invoke(board);
-    }
+
 
 }
