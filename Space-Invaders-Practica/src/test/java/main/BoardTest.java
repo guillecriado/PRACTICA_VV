@@ -323,7 +323,7 @@ class BoardTest {
 
         int numberDeathsBeforeShot = board.getDeaths();
         Shot shot = board.getShot();
-        int positionYBeforeUpdate = shot.getY();
+
 
         shot.setX(samePositionX); // : Posicion X disparo -> Es igual a la posición X del Alien
         board.getAliens().getFirst().setX(samePositionX); //Posición X Alien -> Es igual a la posición X del disparo
@@ -334,7 +334,7 @@ class BoardTest {
         board.update_shots();
 
         int numberDeathsAfterShot = board.getDeaths();
-        int positionYAfterUpdate = board.getShot().getY();
+
         assertTrue(board.getAliens().getFirst().isDying());  //Alien Dying -> TRUE
         assertEquals(numberDeathsBeforeShot+1,numberDeathsAfterShot); // Contador de muertes suma 1
     }
