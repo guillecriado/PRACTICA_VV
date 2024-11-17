@@ -83,7 +83,7 @@ public class Board extends JPanel {
      * alienígena y el siguiente.
      * También crea un jugador y el disparo con el que podrá matar a los aliens.
      * */
-    private void gameInit() {
+    public void gameInit() {
 
         this.aliens = new ArrayList<>();
 

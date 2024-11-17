@@ -18,15 +18,18 @@ class BoardTest_CajaNegra {
         board = new Board();
         board.getTimer().stop();
     }
+
     //---------------------------------------------Prueba 1 gameInit()-----------------------------------------------------------------
     @Test
     void testgameInitR1() {
+        board.gameInit();
         board.getAliens().clear();// Incorrecto (No Aliens 24)
         assertNotEquals(Commons.NUMBER_OF_ALIENS_TO_DESTROY, board.getAliens().size()); //Iniciar Aliens con 24 ->NO
     }
 
     @Test
     void testgameInitR2() {
+        board.gameInit();
         board.getAliens().get(0).setX(3); //Posición X Inicial y Desplazamiento pone a X < 5
         assertEquals(Commons.NUMBER_OF_ALIENS_TO_DESTROY, board.getAliens().size()); //Iniciar Aliens con 24 ->SI
         assertFalse(board.getAliens().get(0).getX() >= (Commons.BORDER_LEFT)); //Iniciar Alienígen dentro de Board -> NO
@@ -34,6 +37,7 @@ class BoardTest_CajaNegra {
 
     @Test
     void testgameInitR3() {
+        board.gameInit();
         board.getAliens().get(0).setX(330); //Posición X Inicial y Desplazamiento X > 328
         assertEquals(Commons.NUMBER_OF_ALIENS_TO_DESTROY, board.getAliens().size()); //Iniciar Aliens con 24 ->SI
         assertFalse(board.getAliens().get(0).getX() <= (Commons.BOARD_WIDTH - Commons.BORDER_RIGHT - Commons.ALIEN_WIDTH)); //Iniciar Alienígen dentro de Board -> NO
@@ -42,6 +46,7 @@ class BoardTest_CajaNegra {
 
     @Test
     void testGameInitR4() {
+        board.gameInit();
         board.getAliens().getFirst().setY(-1); //Posición X Inicial y Desplazamiento y < 0
         assert (board.getAliens().size() == Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Iniciar Aliens con 24 ->SI
         assertFalse(board.getAliens().getFirst().getY() >= (0)); //Iniciar Alienígen dentro de Board -> NO
@@ -49,6 +54,7 @@ class BoardTest_CajaNegra {
 
     @Test
     void testGameInitR5() {
+        board.gameInit();
         board.getAliens().getFirst().setY(400); //Posición X Inicial y Desplazamiento y > 350
         assert (board.getAliens().size() == Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Iniciar Aliens con 24 ->SI
         assertFalse(board.getAliens().getFirst().getY() <= (Commons.BOARD_HEIGHT)); //Iniciar Alienígen dentro de Board -> NO
@@ -56,6 +62,7 @@ class BoardTest_CajaNegra {
 
     @Test
     void testGameInitR6() {
+        board.gameInit();
         assert (board.getAliens().size() == Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Iniciar Aliens con 24 ->SI
         board.getAliens().getFirst().setX(0); //El primer Alien Inicia en posición ALIEN_INIT_Y (5)
         assertNotEquals((Commons.ALIEN_INIT_X), board.getAliens().getFirst().getX()); //Colocar Alienígenas en Formación de Cuadrícula  -> NO
@@ -63,6 +70,7 @@ class BoardTest_CajaNegra {
 
     @Test
     void testGameInitR7() {
+        board.gameInit();
         assert (board.getAliens().size() == Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Iniciar Aliens con 24 ->SI
         board.getAliens().getFirst().setY(0); //El primer Alien Inicia en posición ALIEN_INIT_Y (350)
         assertNotEquals((Commons.ALIEN_INIT_Y), board.getAliens().getFirst().getY()); //Colocar Alienígenas en Formación de Cuadrícula -> NO
@@ -72,6 +80,7 @@ class BoardTest_CajaNegra {
     // Este test va a fallar , es normal ya que en el codigo esta mal la posicion de los aliens
     @Test
     void testGameInitR8() {
+        board.gameInit();
         assert (board.getAliens().size() == Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Iniciar Aliens con 24 ->SI
         checkAlienPosition(board.getAliens());
         assertNotNull(board.getPlayer()); // Inicializar Player -> SI
@@ -129,7 +138,7 @@ class BoardTest_CajaNegra {
 
     //Es normal que falle , ya que en el codigo numero de contador coge el valor Commons.CHANCE
     @Test
-    void testUpdateR1()  {
+    void testUpdateR1() {
         board.setDeaths(Commons.NUMBER_OF_ALIENS_TO_DESTROY); //Número de contador de muertes
         board.update();
         assertFalse(board.isInGame()); // Si el jugador ha perdido todas las vidas, el juego termina
@@ -137,7 +146,7 @@ class BoardTest_CajaNegra {
 
 
     @Test
-    void testUpdateR2()  {
+    void testUpdateR2() {
         board.setDeaths(0); //Número de contador de muertes
         int positionXBeforeUpdate = board.getAliens().get(0).getX();
         board.update();
@@ -151,7 +160,7 @@ class BoardTest_CajaNegra {
     // Es normal que falle , para comprobar borde de derecha el codigo esta haciendo
     // if (x <= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT && direction != -1)
     @Test
-    void testUpdateAliensR1()  {
+    void testUpdateAliensR1() {
         int positionYBeforeUpdate = board.getAliens().getFirst().getY();
         board.getAliens().getFirst().setX(Commons.BOARD_WIDTH - Commons.BORDER_RIGHT);//Llega a borde derecho
         board.setDirection(1); //Mueve el alienígena hacia la derecha
@@ -165,7 +174,7 @@ class BoardTest_CajaNegra {
     //Es normal que falle , ya que en el codigo cuando llega borde izquierdo hace  a.setX(a.getY() + Commons.GO_DOWN);
     // no cambia posicion en Y
     @Test
-    void testUpdateAliensR2()  {
+    void testUpdateAliensR2() {
         int positionYBeforeUpdate = board.getAliens().getFirst().getY();
         board.getAliens().getFirst().setX(Commons.BORDER_LEFT);//Llega a borde izquierdo
         board.setDirection(-1); //Mueve el alienígena hacia la izquierda
@@ -178,7 +187,7 @@ class BoardTest_CajaNegra {
     //Es normal que falle ,  para comprobar borde de derecha el codigo esta haciendo
     //    // if (x <= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT && direction != -1)
     @Test
-    void testUpdateAliensR3()  {
+    void testUpdateAliensR3() {
         int positionXBeforeUpdate = board.getAliens().get(2).getX();
         board.setDirection(2); //Mueve el alienígena hacia la izquierda
         board.update_aliens();
@@ -190,7 +199,7 @@ class BoardTest_CajaNegra {
 
     //Es normal que falle ,  para comprobar borde de derecha el codigo esta haciendo
     @Test
-    void testUpdateAliensR4()  {
+    void testUpdateAliensR4() {
         int positionXBeforeUpdate = board.getAliens().get(2).getX();
         board.setDirection(1); //Mueve el alienígena hacia la derecha
         board.update_aliens();
@@ -202,8 +211,8 @@ class BoardTest_CajaNegra {
 
 
     @Test
-    void testUpdateAliensR5()  {
-        board.getAliens().getFirst().setY(Commons.GROUND + Commons.ALIEN_HEIGHT );//Llega a borde inferior
+    void testUpdateAliensR5() {
+        board.getAliens().getFirst().setY(Commons.GROUND + Commons.ALIEN_HEIGHT);//Llega a borde inferior
         board.update_aliens();
         assertFalse(board.isInGame()); //Termina Juego
         assertEquals("Invasion!", board.getMessage()); //Mensaje Invasión
@@ -217,7 +226,7 @@ class BoardTest_CajaNegra {
     // private void initBomb(int x, int y) {
     //            setDestroyed(true);
     @Test
-    void testUpdateBombR1()  {
+    void testUpdateBombR1() {
         board.getAliens().getFirst().getBomb().setDestroyed(true); //Ha sido destruido/no ha sido creado -> SI
         board.update_bomb();
         assertFalse(board.getAliens().getFirst().getBomb().isDestroyed()); //Cambiar estado de Bombas (destroyed)
@@ -225,7 +234,7 @@ class BoardTest_CajaNegra {
     }
 
     @Test
-    void testUpdateBombR2()  {
+    void testUpdateBombR2() {
         board.getAliens().getFirst().getBomb().setDestroyed(false); //Ha sido destruido/no ha sido creado -> NO
         int positionYBeforeUpdate = board.getAliens().getFirst().getBomb().getY();
         board.update_bomb();
@@ -239,7 +248,7 @@ class BoardTest_CajaNegra {
     //                    bomb.setDestroyed(false);
     //                }
     @Test
-    void testUpdateBombR3()  {
+    void testUpdateBombR3() {
         board.getAliens().getFirst().getBomb().setDestroyed(false); //Ha sido destruido/no ha sido creado -> NO
         board.getAliens().getFirst().getBomb().setY(Commons.GROUND - Commons.BOMB_HEIGHT); //Bomba ha llegado al suelo
         board.update_bomb();
@@ -253,7 +262,7 @@ class BoardTest_CajaNegra {
     //                    this.player.setImage(ii.getImage());
     //                    this.player.setDying(false);
     @Test
-    void testUpdateBombR4()  {
+    void testUpdateBombR4() {
         board.getAliens().getFirst().getBomb().setDestroyed(false); //Ha sido destruido/no ha sido creado -> NO
         //Simultar Si jugador alcanza bomba
         Player player = board.getPlayer();
@@ -272,8 +281,8 @@ class BoardTest_CajaNegra {
     //---------------------------------------------Prueba 6 update_shots() -----------------------------------------------------------------
 
     @Test
-    void testUpdateShotsR1()  {
-        int samePositionY=100;
+    void testUpdateShotsR1() {
+        int samePositionY = 100;
 
         Shot shot = board.getShot();
         int positionYBeforeUpdate = shot.getY();
@@ -291,8 +300,8 @@ class BoardTest_CajaNegra {
     }
 
     @Test
-    void testUpdateShotsR2()  {
-        int samePositionX=100;
+    void testUpdateShotsR2() {
+        int samePositionX = 100;
 
         Shot shot = board.getShot();
         int positionYBeforeUpdate = shot.getY();
@@ -314,9 +323,9 @@ class BoardTest_CajaNegra {
     // en codigo hace     deaths--;
 
     @Test
-    void testUpdateShotsR3()  {
-        int samePositionX=100;
-        int samePositionY=100;
+    void testUpdateShotsR3() {
+        int samePositionX = 100;
+        int samePositionY = 100;
 
         int numberDeathsBeforeShot = board.getDeaths();
         Shot shot = board.getShot();
@@ -333,10 +342,8 @@ class BoardTest_CajaNegra {
         int numberDeathsAfterShot = board.getDeaths();
 
         assertTrue(board.getAliens().getFirst().isDying());  //Alien Dying -> TRUE
-        assertEquals(numberDeathsBeforeShot+1,numberDeathsAfterShot); // Contador de muertes suma 1
+        assertEquals(numberDeathsBeforeShot + 1, numberDeathsAfterShot); // Contador de muertes suma 1
     }
-
-
 
 
 }
