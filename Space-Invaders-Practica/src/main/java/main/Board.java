@@ -235,7 +235,7 @@ public class Board extends JPanel {
      * */
     public void update() {
 
-        if (deaths == Commons.CHANCE) {
+        if (deaths == Commons.NUMBER_OF_ALIENS_TO_DESTROY) { // modificado linea 238 antes ponia deaths ==  Commons.CHANCE
             inGame = false;
             timer.stop();
             message = "Game won!";

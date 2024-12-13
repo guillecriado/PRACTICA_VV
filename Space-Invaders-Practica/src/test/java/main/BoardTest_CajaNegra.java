@@ -152,7 +152,7 @@ class BoardTest_CajaNegra {
         board.update();
         int positionXAfterUpdate = board.getAliens().get(0).getX();
         assertNotEquals(positionXBeforeUpdate, positionXAfterUpdate); // Mover
-        assertFalse(board.isInGame()); // Si el jugador ha perdido todas las vidas, el juego termina
+        assertTrue(board.isInGame());
     }
 
     //---------------------------------------------Prueba 4 update_aliens() -----------------------------------------------------------------
