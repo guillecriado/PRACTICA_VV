@@ -57,7 +57,7 @@ public class AlienTest_CajaBlanca {
     @Test
     void alienCajaBlancaCP5(){
         alien = new Alien(164, -1);
-        int posicionXEsperada = 179 ;
+        int posicionXEsperada = (Commons.BOARD_WIDTH - Commons.BORDER_RIGHT) / 2 ;
         int posicionYEsperada = 0;
 
         assertAll("Caso de Prueba CP22: Posición de creación del alien",

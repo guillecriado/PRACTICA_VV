@@ -90,7 +90,7 @@ public class Board extends JPanel {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 6; j++) {
 
-                var alien = new Alien(Commons.ALIEN_INIT_Y + 18 * j,
+                var alien = new Alien(Commons.ALIEN_INIT_X + 18 * j, // en linea 93 antes ponia Commons.ALIEN_INIT_Y
                         Commons.ALIEN_INIT_Y + 18 * i);
                 this.aliens.add(alien);
             }
@@ -235,7 +235,7 @@ public class Board extends JPanel {
      * */
     public void update() {
 
-        if (deaths == Commons.CHANCE) {
+        if (deaths == Commons.NUMBER_OF_ALIENS_TO_DESTROY) { // modificado linea 238 antes ponia deaths ==  Commons.CHANCE
             inGame = false;
             timer.stop();
             message = "Game won!";
@@ -271,7 +271,7 @@ public class Board extends JPanel {
                         var ii = new ImageIcon(explImg);
                         alien.setImage(ii.getImage());
                         alien.setDying(true);
-                        deaths--;
+                        deaths++; //modificado linea 274 antes ponia deaths --;
                         this.shot.die();
                     }
                 }
@@ -298,8 +298,8 @@ public class Board extends JPanel {
 
             int x = alien.getX();
 
-            if (x <= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT && direction != -1) {
-
+            if (x >= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT && direction != -1) {
+                // modificado linea 301 antes ponia  x<= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT
                 direction = 0;
 
                 Iterator<Alien> i1 = this.aliens.iterator();
@@ -320,7 +320,7 @@ public class Board extends JPanel {
                 while (i2.hasNext()) {
 
                     Alien a = i2.next();
-                    a.setX(a.getY() + Commons.GO_DOWN);
+                    a.setY(a.getY() + Commons.GO_DOWN);//modificado linea 323 antes ponia a.setY(a.getY() + Commons.GO_DOWN);
                 }
             }
         }
@@ -355,14 +355,14 @@ public class Board extends JPanel {
      * Si no sucede ninguna de las condiciones anteriores, la bomba bajará verticalmente una posición.
      * */
     public void update_bomb(){
-        var generator = new Random();
+       //Eliminado liena 358 antes tenia  var generator = new Random();
 
         for (Alien alien : this.aliens) {
 
-            int shot = generator.nextInt(15);
+            //Eliminado liena 362 antes tenia  int shot = generator.nextInt(15);
             Alien.Bomb bomb = alien.getBomb();
 
-            if (shot == Commons.CHANCE && alien.isVisible() && bomb.isDestroyed()) {
+            if (alien.isVisible() && bomb.isDestroyed()) { //modificado linea 365 antes hay otra condición de shot == Commons.CHANCE &&
 
                 bomb.setDestroyed(false);
                 bomb.setX(alien.getX());
@@ -383,7 +383,7 @@ public class Board extends JPanel {
 
                     var ii = new ImageIcon(explImg);
                     this.player.setImage(ii.getImage());
-                    this.player.setDying(false);
+                    this.player.setDying(true);
                     bomb.setDestroyed(true);
                 }
             }
@@ -394,7 +394,7 @@ public class Board extends JPanel {
 
                 if (bomb.getY() >= Commons.GROUND - Commons.BOMB_HEIGHT) {
 
-                    bomb.setDestroyed(false);
+                    bomb.setDestroyed(true); //modificado linea 397 antes ponia bomb.setDestroyed(false);
                 }
             }
         }
