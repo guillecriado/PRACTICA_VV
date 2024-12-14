@@ -27,7 +27,7 @@ public class Alien extends Sprite {
      * */
     private void initAlien(int x, int y) {
 
-        if (x> Commons.BOARD_WIDTH){
+        if (x> Commons.BOARD_WIDTH - Commons.BORDER_RIGHT){
             this.x = Commons.BOARD_WIDTH - Commons.BORDER_RIGHT;
         } else if (x<Commons.BORDER_LEFT){
             this.x = Commons.BORDER_LEFT;
@@ -57,7 +57,7 @@ public class Alien extends Sprite {
      * */
     public void act(int direction) {
 
-        this.x = direction+Commons.ALIEN_WIDTH;
+        this.x += direction+Commons.ALIEN_WIDTH;
     }
 
     /**
@@ -95,13 +95,20 @@ public class Alien extends Sprite {
 
             setDestroyed(true);
 
-            if (x<= Commons.BOARD_WIDTH && y<= Commons.BOARD_HEIGHT) {
-                this.x += x;
-                this.y += y;
-            } else
-            {
+            if (x> Commons.BOARD_WIDTH - Commons.BORDER_RIGHT){
                 this.x = Commons.BOARD_WIDTH - Commons.BORDER_RIGHT;
+            } else if (x<Commons.BORDER_LEFT){
+                this.x = Commons.BORDER_LEFT;
+            }else{
+                this.x = x;
+            }
+
+            if (y> Commons.BOARD_HEIGHT){
                 this.y = Commons.BOARD_HEIGHT;
+            } else if (y<0){
+                this.y=0;
+            }else{
+                this.y = y;
             }
 
             var bombImg = "src/main/resources/images/bomb.png";
