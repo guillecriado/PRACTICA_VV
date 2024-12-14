@@ -100,7 +100,7 @@ public class Alien extends Sprite {
                 this.y += y;
             } else
             {
-                this.x = Commons.BOARD_WIDTH;
+                this.x = Commons.BOARD_WIDTH - Commons.BORDER_RIGHT;
                 this.y = Commons.BOARD_HEIGHT;
             }
 
