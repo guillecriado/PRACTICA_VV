@@ -298,8 +298,8 @@ public class Board extends JPanel {
 
             int x = alien.getX();
 
-            if (x <= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT && direction != -1) {
-
+            if (x >= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT && direction != -1) {
+                // modificado linea 301 antes ponia  x<= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT
                 direction = 0;
 
                 Iterator<Alien> i1 = this.aliens.iterator();
@@ -320,7 +320,7 @@ public class Board extends JPanel {
                 while (i2.hasNext()) {
 
                     Alien a = i2.next();
-                    a.setX(a.getY() + Commons.GO_DOWN);
+                    a.setY(a.getY() + Commons.GO_DOWN);//modificado linea 323 antes ponia a.setY(a.getY() + Commons.GO_DOWN);
                 }
             }
         }

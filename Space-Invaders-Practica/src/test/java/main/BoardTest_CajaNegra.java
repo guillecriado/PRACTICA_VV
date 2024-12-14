@@ -180,7 +180,7 @@ class BoardTest_CajaNegra {
         board.setDirection(-1); //Mueve el alienígena hacia la izquierda
         board.update_aliens();
         int positionYAfterUpdate = board.getAliens().getFirst().getY();
-        int diff = (positionYAfterUpdate - positionYBeforeUpdate) / Commons.NUMBER_OF_ALIENS_TO_DESTROY;
+        int diff = (positionYAfterUpdate - positionYBeforeUpdate) ;
         assertEquals(Commons.GO_DOWN, diff); // Cambiar dirección y mover hacia abajo
     }
 
@@ -189,7 +189,7 @@ class BoardTest_CajaNegra {
     @Test
     void testUpdateAliensR3() {
         int positionXBeforeUpdate = board.getAliens().get(2).getX();
-        board.setDirection(2); //Mueve el alienígena hacia la izquierda
+        board.setDirection(-1); //Mueve el alienígena hacia la izquierda
         board.update_aliens();
         int positionXAfterUpdate = board.getAliens().get(2).getX();
         int expectedPositionMoved = -1 + Commons.ALIEN_WIDTH;

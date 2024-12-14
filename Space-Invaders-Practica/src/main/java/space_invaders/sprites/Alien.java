@@ -56,7 +56,7 @@ public class Alien extends Sprite {
      * */
     public void act(int direction) {
 
-        this.x = direction+Commons.ALIEN_WIDTH;
+        this.x =  this.x+direction+Commons.ALIEN_WIDTH;//modificado liena 59 , antes no suma this.x
     }
 
     /**
