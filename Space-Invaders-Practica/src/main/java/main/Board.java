@@ -271,7 +271,7 @@ public class Board extends JPanel {
                         var ii = new ImageIcon(explImg);
                         alien.setImage(ii.getImage());
                         alien.setDying(true);
-                        deaths--;
+                        deaths++; //modificado linea 274 antes ponia deaths --;
                         this.shot.die();
                     }
                 }
