@@ -7,6 +7,7 @@ import space_invaders.sprites.Player;
 import space_invaders.sprites.Shot;
 
 import java.util.List;
+import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -225,9 +226,24 @@ class BoardTest_CajaNegra {
     //Normal que falle , inicializar bomb con destoryed = true
     // private void initBomb(int x, int y) {
     //            setDestroyed(true);
+
+
+
     @Test
     void testUpdateBombR1() {
+         class FixedRandom extends Random {
+            private final int fixedValue;
+            public FixedRandom(int fixedValue) {
+                this.fixedValue = fixedValue;
+            }
+            @Override
+            public int nextInt(int bound) {
+                return fixedValue % bound;
+            }
+        }
+
         board.getAliens().getFirst().getBomb().setDestroyed(true); //Ha sido destruido/no ha sido creado -> SI
+        board.setGenerator(new FixedRandom(Commons.CHANCE));
         board.update_bomb();
         assertFalse(board.getAliens().getFirst().getBomb().isDestroyed()); //Cambiar estado de Bombas (destroyed)
         assertNotNull(board.getAliens().getFirst().getBomb()); //Crear bomba
