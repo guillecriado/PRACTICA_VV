@@ -299,8 +299,8 @@ public class Board extends JPanel {
             int x = alien.getX();
 
             if (x >= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT && direction != -1) {
-                // modificado linea 301 antes ponia  x<= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT
-                direction = 0;
+
+                direction = -1;
 
                 Iterator<Alien> i1 = this.aliens.iterator();
 
