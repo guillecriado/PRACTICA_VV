@@ -357,7 +357,6 @@ public class Board extends JPanel {
     public void update_bomb(){
         // modificado liena 358 antes ponia Random generator = new Random();
         //se ha añadido la variable generator en la clase para poder hacer el test
-
         for (Alien alien : this.aliens) {
 
             int shot = generator.nextInt(15);
