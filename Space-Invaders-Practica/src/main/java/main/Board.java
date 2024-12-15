@@ -355,14 +355,14 @@ public class Board extends JPanel {
      * Si no sucede ninguna de las condiciones anteriores, la bomba bajará verticalmente una posición.
      * */
     public void update_bomb(){
-       //Eliminado liena 358 antes tenia  var generator = new Random();
+        var generator = new Random();
 
         for (Alien alien : this.aliens) {
 
-            //Eliminado liena 362 antes tenia  int shot = generator.nextInt(15);
+            int shot = generator.nextInt(15);
             Alien.Bomb bomb = alien.getBomb();
 
-            if (alien.isVisible() && bomb.isDestroyed()) { //modificado linea 365 antes hay otra condición de shot == Commons.CHANCE &&
+            if (shot == Commons.CHANCE && alien.isVisible() && bomb.isDestroyed()) {
 
                 bomb.setDestroyed(false);
                 bomb.setX(alien.getX());
