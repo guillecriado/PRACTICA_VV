@@ -9,6 +9,7 @@ import space_invaders.sprites.Shot;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -204,18 +205,22 @@ public class BoardTest_Integracion {
     @Test
     public void testUpdateBomb_GeneracionYReinicio() {
         Alien.Bomb mockBomb = Mockito.mock(Alien.Bomb.class);
-
-        when(mockAlien.isVisible()).thenReturn(true);
         when(mockAlien.getBomb()).thenReturn(mockBomb);
+        when(mockAlien.isVisible()).thenReturn(true);
         when(mockBomb.isDestroyed()).thenReturn(true);
 
         // Asignamos posición del alien
         when(mockAlien.getX()).thenReturn(150);
         when(mockAlien.getY()).thenReturn(50);
 
+        Random mockRandom = mock(Random.class);
+        when(mockRandom.nextInt(15)).thenReturn(Commons.CHANCE);
+        board.setGenerator(mockRandom);
+
         board.update_bomb();
 
         // Verificar que la bomba se reinicia
+        verify(mockBomb).setDestroyed(false);
         verify(mockBomb).setX(150);
         verify(mockBomb).setY(50);
     }
