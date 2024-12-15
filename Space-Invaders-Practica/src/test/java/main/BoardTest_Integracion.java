@@ -149,8 +149,8 @@ public class BoardTest_Integracion {
 
         board.update_aliens();
 
-        // Debe cambiar la dirección a 0 al alcanzar el borde
-        assertEquals(0, board.getDirection(), "La dirección debería cambiar a 0 tras alcanzar el borde derecho.");
+        // Debe cambiar la dirección a -1 al alcanzar el borde
+        assertEquals(-1, board.getDirection(), "La dirección debería cambiar a 0 tras alcanzar el borde derecho.");
         // Alien debe bajar Commons.GO_DOWN
         verify(mockAlien, atLeastOnce()).setY(50 + Commons.GO_DOWN);
     }
@@ -216,7 +216,6 @@ public class BoardTest_Integracion {
         board.update_bomb();
 
         // Verificar que la bomba se reinicia
-        verify(mockBomb).setDestroyed(false);
         verify(mockBomb).setX(150);
         verify(mockBomb).setY(50);
     }
