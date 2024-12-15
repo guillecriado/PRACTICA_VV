@@ -24,7 +24,7 @@ public class Player extends Sprite {
         width = ii.getImage().getWidth(null);
         setImage(ii.getImage());
 
-        int START_X = 270;
+        int START_X = 161;
         setX(START_X);
 
         int START_Y = 280;
@@ -40,14 +40,12 @@ public class Player extends Sprite {
 
         x += dx;
 
-        if (x >= 2) {
+        if (x <= Commons.BORDER_LEFT) {
 
-            x = 2;
-        }
+            x = Commons.BORDER_LEFT;
+        } else if (x >= Commons.BOARD_WIDTH - (Commons.BORDER_RIGHT + width) ){
 
-        if (x >= Commons.BOARD_WIDTH - 2 * width) {
-
-            x = Commons.BOARD_WIDTH - 2 * width;
+            x = Commons.BOARD_WIDTH - (Commons.BORDER_RIGHT + width);
         }
     }
     /**
@@ -63,7 +61,7 @@ public class Player extends Sprite {
 
         if (key == KeyEvent.VK_LEFT) {
 
-            dx = 2;
+            dx = -2;
         }
 
         if (key == KeyEvent.VK_RIGHT) {
