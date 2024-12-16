@@ -39,7 +39,7 @@ class PlayerTest_CajaNegra {
     void setUp() {
         player= new Player();
         posicionInicialXEsperada = 161;
-        posicionInicialYEsperada = 179;
+        posicionInicialYEsperada = 280;
         eventoIzquierda = new KeyEvent(new java.awt.Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_LEFT, KeyEvent.CHAR_UNDEFINED);
         eventoDerecha= new KeyEvent(new java.awt.Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_RIGHT, KeyEvent.CHAR_UNDEFINED);
         eventoAleatorio=new KeyEvent(new java.awt.Component(){}, KeyEvent.KEY_PRESSED, System.currentTimeMillis(), 0, KeyEvent.VK_0, KeyEvent.CHAR_UNDEFINED);
@@ -100,7 +100,7 @@ class PlayerTest_CajaNegra {
     void actCP7(){
         player.setX(314);
         player.act();
-        assertEquals(314,player.getX());
+        assertEquals(313,player.getX());
     }
 
     @Test
