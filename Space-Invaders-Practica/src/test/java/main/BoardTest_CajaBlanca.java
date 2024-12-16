@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import space_invaders.sprites.Alien;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -30,7 +31,7 @@ class BoardTest_CajaBlanca {
 
     @Test
     void updateCamino1() {
-        board.setDeaths(Commons.CHANCE);
+        board.setDeaths(Commons.NUMBER_OF_ALIENS_TO_DESTROY);
         board.update();
         assertFalse(board.isInGame());
         assertEquals("Game won!", board.getMessage());
@@ -108,7 +109,7 @@ class BoardTest_CajaBlanca {
         board.update_shots();
         int numberDeAfter = board.getDeaths();
         assertFalse(board.getShot().isVisible());
-        assertEquals(numberDeBefore - 1, numberDeAfter);
+        assertEquals(numberDeBefore + 1, numberDeAfter);
         assertTrue(board.getAliens().getFirst().isDying());
     }
 
@@ -217,7 +218,7 @@ class BoardTest_CajaBlanca {
 
 
         for (int i = 0; i < positionXAliensBefore.size(); i++) {
-            assertEquals(positionXAliensBefore.get(i) + direction+Commons.ALIEN_WIDTH, positionXAliensAfter.get(i));
+            assertEquals(positionXAliensBefore.get(i) + direction, positionXAliensAfter.get(i));
         }
         assertTrue(board.isInGame());
     }
@@ -273,6 +274,17 @@ class BoardTest_CajaBlanca {
 
     @Test
     void update_bombCamino3() {
+        class FixedRandom extends Random {
+            private final int fixedValue;
+            public FixedRandom(int fixedValue) {
+                this.fixedValue = fixedValue;
+            }
+            @Override
+            public int nextInt(int bound) {
+                return fixedValue % bound;
+            }
+        }
+        board.setGenerator(new FixedRandom(Commons.CHANCE));
         board.update_bomb();
         assertFalse(board.getAliens().getFirst().getBomb().isDestroyed());
     }
@@ -296,9 +308,8 @@ class BoardTest_CajaBlanca {
                 board.getAliens().get(i).getBomb().setY(Commons.GROUND);
             }
         }
-
         board.update_bomb();
-        assertFalse(board.getAliens().getFirst().getBomb().isDestroyed());
+        assertTrue(board.getAliens().getFirst().getBomb().isDestroyed());
     }
 
     @Test
@@ -314,6 +325,6 @@ class BoardTest_CajaBlanca {
         board.getAliens().getFirst().getBomb().setY(100);
         board.update_bomb();
         assertTrue(board.getAliens().getFirst().getBomb().isDestroyed());
-        assertFalse(board.getPlayer().isDying());
+        assertTrue(board.getPlayer().isDying());
     }
 }

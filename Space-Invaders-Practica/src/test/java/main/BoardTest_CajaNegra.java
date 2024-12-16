@@ -193,7 +193,7 @@ class BoardTest_CajaNegra {
         board.setDirection(-1); //Mueve el alienígena hacia la izquierda
         board.update_aliens();
         int positionXAfterUpdate = board.getAliens().get(2).getX();
-        int expectedPositionMoved = -1 + Commons.ALIEN_WIDTH;
+        int expectedPositionMoved = -1 ;
         int diff = (positionXAfterUpdate - positionXBeforeUpdate);
         assertEquals(expectedPositionMoved, diff); // Mover
     }
@@ -205,7 +205,7 @@ class BoardTest_CajaNegra {
         board.setDirection(1); //Mueve el alienígena hacia la derecha
         board.update_aliens();
         int positionXAfterUpdate = board.getAliens().get(2).getX();
-        int expectedPositionMoved = 1 + Commons.ALIEN_WIDTH;
+        int expectedPositionMoved = 1 ;
         int diff = (positionXAfterUpdate - positionXBeforeUpdate);
         assertEquals(expectedPositionMoved, diff); // Mover
     }
