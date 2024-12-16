@@ -17,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
+@DisplayName("Tests de integración")
 public class BoardTest_Integracion {
 
     private Board board;

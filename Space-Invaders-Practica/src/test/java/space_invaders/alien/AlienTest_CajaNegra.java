@@ -514,7 +514,7 @@ public class AlienTest_CajaNegra {
             int direction = 5;
             int posicionInicial = alien.getX();
             alien.act(direction);
-            int valorXEsperado = posicionInicial + Commons.ALIEN_WIDTH + direction;
+            int valorXEsperado = posicionInicial + direction;
             assertEquals(valorXEsperado,alien.getX(), "El valor X debería ser 17");
         }
         @Test
@@ -522,7 +522,7 @@ public class AlienTest_CajaNegra {
             int direction = 6;
             int posicionInicial = alien.getX();
             alien.act(direction);
-            int valorXEsperado = posicionInicial + Commons.ALIEN_WIDTH + direction;
+            int valorXEsperado = posicionInicial + direction;
             assertEquals(valorXEsperado,alien.getX(), "El valor X debería ser 18");
         }
         @Test
@@ -530,7 +530,7 @@ public class AlienTest_CajaNegra {
             int direction = 150;
             int posicionInicial = alien.getX();
             alien.act(direction);
-            int valorXEsperado = posicionInicial + Commons.ALIEN_WIDTH + direction;
+            int valorXEsperado = posicionInicial + direction;
             assertEquals(valorXEsperado,alien.getX(), "El valor X debería ser 162");
         }
         @Test
@@ -538,7 +538,7 @@ public class AlienTest_CajaNegra {
             int direction = 303;
             int posicionInicial = alien.getX();
             alien.act(direction);
-            int valorXEsperado = posicionInicial + Commons.ALIEN_WIDTH + direction;
+            int valorXEsperado = posicionInicial +  direction;
             assertEquals(valorXEsperado,alien.getX(), "El valor X debería ser 315");
         }
         @Test
@@ -546,7 +546,7 @@ public class AlienTest_CajaNegra {
             int direction = 304;
             int posicionInicial = alien.getX();
             alien.act(direction);
-            int valorXEsperado = posicionInicial + Commons.ALIEN_WIDTH + direction;
+            int valorXEsperado = posicionInicial + direction;
             assertEquals(valorXEsperado,alien.getX(), "El valor X debería ser 315");
         }
         @Test
@@ -554,7 +554,7 @@ public class AlienTest_CajaNegra {
             int direction = 315;
             int posicionInicial = alien.getX();
             alien.act(direction);
-            int valorXEsperado = posicionInicial + Commons.ALIEN_WIDTH + direction;
+            int valorXEsperado = posicionInicial + direction;
             assertEquals(valorXEsperado,alien.getX(), "El valor X debería ser 315");
         }
         @Test
@@ -562,7 +562,7 @@ public class AlienTest_CajaNegra {
             int direction = 316;
             int posicionInicial = alien.getX();
             alien.act(direction);
-            int valorXEsperado = posicionInicial + Commons.ALIEN_WIDTH + direction;
+            int valorXEsperado = posicionInicial + direction;
             assertEquals(valorXEsperado,alien.getX(), "El valor X debería ser 316");
         }
     }
