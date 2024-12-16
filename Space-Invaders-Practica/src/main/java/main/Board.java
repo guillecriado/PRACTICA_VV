@@ -115,7 +115,7 @@ public class Board extends JPanel {
 
             if (alien.isDying()) {
 
-                alien.setDying(false);
+                alien.die();
             }
         }
     }
@@ -299,8 +299,8 @@ public class Board extends JPanel {
             int x = alien.getX();
 
             if (x >= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT && direction != -1) {
-                // modificado linea 301 antes ponia  x<= Commons.BOARD_WIDTH - Commons.BORDER_RIGHT
-                direction = 0;
+
+                direction = -1;
 
                 Iterator<Alien> i1 = this.aliens.iterator();
 
@@ -355,14 +355,14 @@ public class Board extends JPanel {
      * Si no sucede ninguna de las condiciones anteriores, la bomba bajará verticalmente una posición.
      * */
     public void update_bomb(){
-       //Eliminado liena 358 antes tenia  var generator = new Random();
-
+        // modificado liena 358 antes ponia Random generator = new Random();
+        //se ha añadido la variable generator en la clase para poder hacer el test
         for (Alien alien : this.aliens) {
 
-            //Eliminado liena 362 antes tenia  int shot = generator.nextInt(15);
+            int shot = generator.nextInt(15);
             Alien.Bomb bomb = alien.getBomb();
 
-            if (alien.isVisible() && bomb.isDestroyed()) { //modificado linea 365 antes hay otra condición de shot == Commons.CHANCE &&
+            if (shot == Commons.CHANCE && alien.isVisible() && bomb.isDestroyed()) {
 
                 bomb.setDestroyed(false);
                 bomb.setX(alien.getX());
@@ -515,5 +515,10 @@ public class Board extends JPanel {
 
     public void setTimer(Timer timer) {
         this.timer = timer;
+    }
+
+    private Random generator = new Random();
+    public void setGenerator(Random generator) {
+        this.generator = generator;
     }
 }
